@@ -20,4 +20,9 @@ export class PlaceTypeOrmRepository implements PlaceRepository {
   async save(input: Place): Promise<void> {
     await this.ormRepo.save(input);
   }
+
+  async deletePlace(placeId: string): Promise<void> {
+    await this.ormRepo.delete({ id: placeId });
+    return;
+  }
 }

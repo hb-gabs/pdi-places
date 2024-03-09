@@ -3,6 +3,7 @@ import { CreatePlaceDto } from './dto/create-place.dto';
 import { CreatePlace } from '../@core/application/place/create-place';
 import { ListCompanyPlaces } from '../@core/application/place/list-company-places';
 import { GetPlaceById } from '../@core/application/place/get-place';
+import { DeletePlace } from '../@core/application/place/delete-place';
 
 @Injectable()
 export class PlacesService {
@@ -10,6 +11,7 @@ export class PlacesService {
     private createPlace: CreatePlace,
     private listCompanyPlaces: ListCompanyPlaces,
     private getPlaceById: GetPlaceById,
+    private deletePlace: DeletePlace,
   ) {}
 
   async create(createPlaceDto: CreatePlaceDto) {
@@ -36,6 +38,14 @@ export class PlacesService {
       return await this.getPlaceById.execute(id);
     } catch (error) {
       throw new HttpException(error.message, error.statusCode);
+    }
+  }
+
+  async delPlace(id: string) {
+    try {
+      return await this.deletePlace.execute(id);
+    } catch (error) {
+      throw new HttpException(error?.message, error?.statusCode);
     }
   }
 }

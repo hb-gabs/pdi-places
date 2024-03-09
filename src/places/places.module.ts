@@ -15,6 +15,7 @@ import { ListCompanyPlaces } from '../@core/application/place/list-company-place
 import { CompanyTypeOrmRepository } from '../@core/infra/db/typeorm/repositories/company-typeorm.repository';
 import { Company } from '../@core/domain/company/company';
 import { GetPlaceById } from '../@core/application/place/get-place';
+import { DeletePlace } from 'src/@core/application/place/delete-place';
 
 @Module({
   imports: [TypeOrmModule.forFeature([PlaceSchema])],
@@ -64,6 +65,13 @@ import { GetPlaceById } from '../@core/application/place/get-place';
       provide: GetPlaceById,
       useFactory: (placeRepo: PlaceRepository) => {
         return new GetPlaceById(placeRepo);
+      },
+      inject: [PlaceTypeOrmRepository],
+    },
+    {
+      provide: DeletePlace,
+      useFactory: (placeRepo: PlaceRepository) => {
+        return new DeletePlace(placeRepo);
       },
       inject: [PlaceTypeOrmRepository],
     },

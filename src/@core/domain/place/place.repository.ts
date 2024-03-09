@@ -8,4 +8,5 @@ export interface PlaceRepository {
     companyId: string,
     options: IQueryOptions,
   ): Promise<Place[]>;
+  deletePlace(placeId: string): Promise<void>;
 }

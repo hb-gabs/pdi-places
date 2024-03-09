@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
 import { PlacesService } from './places.service';
 import { CreatePlaceDto } from './dto/create-place.dto';
 
@@ -19,5 +19,10 @@ export class PlacesController {
   @Get(':id')
   findById(@Param('id') id: string) {
     return this.placesService.findById(id);
+  }
+
+  @Delete(':id')
+  deletePlace(@Param('id') id: string) {
+    return this.placesService.delPlace(id);
   }
 }

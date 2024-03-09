@@ -16,4 +16,9 @@ export class PlaceMemoryRepository implements PlaceRepository {
   async findAllByCompanyId(companyId: string): Promise<Place[]> {
     return this.places.filter((place) => place.props.company_id === companyId);
   }
+
+  async deletePlace(placeId: string): Promise<void> {
+    this.places = this.places.filter(place => place.id !== placeId);
+    return
+  }
 }
