@@ -1,6 +1,6 @@
-import { UserMemoryRespository } from '../../infra/db/in-memory/user-memory.repository';
-import { UpdateUserProfile } from '../user/update-user-profile';
-import { User } from '../../domain/user/user';
+import { UserMemoryRespository } from '../../../infra/db/in-memory/user-memory.repository';
+import { UpdateUserProfile } from '../update-user-profile';
+import { User } from '../../../domain/user/user';
 
 describe('update user profile', () => {
   test('execution', async () => {

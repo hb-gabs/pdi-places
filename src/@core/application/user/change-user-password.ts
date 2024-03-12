@@ -1,6 +1,6 @@
 import { UserRepository } from '../../domain/user/user.repository';
 import { Exception } from '../utils/app-exception';
-import { checkPassword } from '../utils/credentials';
+import { checkPassword } from '../utils/helpers';
 
 export class ChangeUserPassword {
   constructor(private userRepo: UserRepository) {}

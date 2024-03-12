@@ -1,6 +1,6 @@
-import { PlaceMemoryRepository } from '../../../@core/infra/db/in-memory/place-memory.repository';
-import { GetPlaceById } from '../place/get-place';
-import { Place } from '../../../@core/domain/place/place';
+import { PlaceMemoryRepository } from '../../../infra/db/in-memory/place-memory.repository';
+import { GetPlaceById } from '../get-place';
+import { Place } from '../../../domain/place/place';
 
 describe('Get place by id', () => {
   test('execute', async () => {

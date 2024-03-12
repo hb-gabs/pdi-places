@@ -1,4 +1,3 @@
-import { Company } from '../../domain/company/company';
 import { CompanyRepository } from '../../domain/company/company.repository';
 import { Place } from '../../domain/place/place';
 import { PlaceRepository } from '../../domain/place/place.repository';

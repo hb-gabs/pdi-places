@@ -1,7 +1,7 @@
-import { UserMemoryRespository } from '../../infra/db/in-memory/user-memory.repository';
-import { ChangeUserPassword } from '../user/change-user-password';
-import { CreateUser } from '../user/create-user';
-import { Exception } from '../utils/app-exception';
+import { UserMemoryRespository } from '../../../infra/db/in-memory/user-memory.repository';
+import { ChangeUserPassword } from '../change-user-password';
+import { CreateUser } from '../create-user';
+import { Exception } from '../../utils/app-exception';
 
 describe('change user password', () => {
   const oldPassword = 'pass123';

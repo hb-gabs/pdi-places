@@ -1,6 +1,6 @@
-import { UserMemoryRespository } from '../../infra/db/in-memory/user-memory.repository';
-import { ListUsers } from '../user/list-users';
-import { User } from '../../domain/user/user';
+import { UserMemoryRespository } from '../../../infra/db/in-memory/user-memory.repository';
+import { ListUsers } from '../list-users';
+import { User } from '../../../domain/user/user';
 
 describe('List users', () => {
   const userRepo = new UserMemoryRespository();

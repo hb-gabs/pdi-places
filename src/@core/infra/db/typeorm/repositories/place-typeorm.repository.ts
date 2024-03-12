@@ -1,4 +1,4 @@
-import { IQueryOptions } from '../../../../application/utils/query-options';
+import { IQueryOptions } from '../../../../application/utils/interfaces';
 import { Place } from '../../../../domain/place/place';
 import { PlaceRepository } from '../../../../domain/place/place.repository';
 import { Repository } from 'typeorm';

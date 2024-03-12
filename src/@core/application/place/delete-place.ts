@@ -1,4 +1,4 @@
-import { PlaceRepository } from "src/@core/domain/place/place.repository";
+import { PlaceRepository } from "../../../@core/domain/place/place.repository";
 
 export class DeletePlace {
   constructor (readonly placeRepo: PlaceRepository) {}

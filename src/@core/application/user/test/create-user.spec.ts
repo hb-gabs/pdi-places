@@ -1,5 +1,5 @@
-import { UserMemoryRespository } from '../../infra/db/in-memory/user-memory.repository';
-import { CreateUser } from '../user/create-user';
+import { UserMemoryRespository } from '../../../infra/db/in-memory/user-memory.repository';
+import { CreateUser } from '../create-user';
 
 describe('Create User', () => {
   test('execution', async () => {

@@ -1,4 +1,4 @@
-import { IQueryOptions } from '../../application/utils/query-options';
+import { IQueryOptions } from '../../application/utils/interfaces';
 import { Place } from './place';
 
 export interface PlaceRepository {

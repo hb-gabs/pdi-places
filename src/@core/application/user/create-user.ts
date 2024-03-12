@@ -1,6 +1,6 @@
 import { User } from '../../domain/user/user';
 import { UserRepository } from '../../domain/user/user.repository';
-import { hash } from '../utils/credentials';
+import { hash } from '../utils/helpers';
 
 type TInput = {
   name: string;

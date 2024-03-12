@@ -1,7 +1,6 @@
-import { CompanyRepository } from '../../domain/company/company.repository';
 import { Place } from '../../domain/place/place';
 import { PlaceRepository } from '../../domain/place/place.repository';
-import { IQueryOptions } from '../utils/query-options';
+import { IQueryOptions } from '../utils/interfaces';
 
 export class ListCompanyPlaces {
   constructor(readonly placeRepo: PlaceRepository) {}

@@ -1,9 +1,9 @@
-import { Company } from '../../domain/company/company';
-import { User } from '../../domain/user/user';
-import { CompanyMemoryRepository } from '../../infra/db/in-memory/company-memory.repository';
-import { UserMemoryRespository } from '../../infra/db/in-memory/user-memory.repository';
-import { ChangeCompanyResponsible } from '../company/change-company-responsible';
-import { Exception } from '../utils/app-exception';
+import { Company } from '../../../domain/company/company';
+import { User } from '../../../domain/user/user';
+import { CompanyMemoryRepository } from '../../../infra/db/in-memory/company-memory.repository';
+import { UserMemoryRespository } from '../../../infra/db/in-memory/user-memory.repository';
+import { ChangeCompanyResponsible } from '../change-company-responsible';
+import { Exception } from '../../utils/app-exception';
 
 describe('Change Compan Responsible', () => {
   const companyRepo = new CompanyMemoryRepository();

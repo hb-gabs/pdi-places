@@ -1,8 +1,8 @@
-import { UserMemoryRespository } from '../../../@core/infra/db/in-memory/user-memory.repository';
-import { ListUserCompanies } from '../company/list-user-companies';
-import { CompanyMemoryRepository } from '../../../@core/infra/db/in-memory/company-memory.repository';
-import { User } from '../../../@core/domain/user/user';
-import { Company } from '../../../@core/domain/company/company';
+import { UserMemoryRespository } from '../../../infra/db/in-memory/user-memory.repository';
+import { ListUserCompanies } from '../list-user-companies';
+import { CompanyMemoryRepository } from '../../../infra/db/in-memory/company-memory.repository';
+import { User } from '../../../domain/user/user';
+import { Company } from '../../../domain/company/company';
 
 describe('List user companies', () => {
   test('execute', async () => {

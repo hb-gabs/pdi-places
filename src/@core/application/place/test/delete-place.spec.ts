@@ -1,6 +1,6 @@
-import { PlaceMemoryRepository } from "../../../@core/infra/db/in-memory/place-memory.repository";
-import { Place } from "../../../@core/domain/place/place";
-import { DeletePlace } from "../place/delete-place";
+import { PlaceMemoryRepository } from "../../../infra/db/in-memory/place-memory.repository";
+import { Place } from "../../../domain/place/place";
+import { DeletePlace } from "../delete-place";
 
 describe('Delete Place', () => {
 

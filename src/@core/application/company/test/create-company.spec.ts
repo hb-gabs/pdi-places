@@ -1,7 +1,7 @@
-import { User } from '../../domain/user/user';
-import { CompanyMemoryRepository } from '../../infra/db/in-memory/company-memory.repository';
-import { UserMemoryRespository } from '../../infra/db/in-memory/user-memory.repository';
-import { CreateCompany } from '../company/create-company';
+import { User } from '../../../domain/user/user';
+import { CompanyMemoryRepository } from '../../../infra/db/in-memory/company-memory.repository';
+import { UserMemoryRespository } from '../../../infra/db/in-memory/user-memory.repository';
+import { CreateCompany } from '../create-company';
 
 describe('Create Company', () => {
   const companyRepo = new CompanyMemoryRepository();

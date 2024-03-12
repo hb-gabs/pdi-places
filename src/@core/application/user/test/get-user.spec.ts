@@ -1,6 +1,6 @@
-import { UserMemoryRespository } from '../../infra/db/in-memory/user-memory.repository';
-import { GetUser } from '../user/get-user';
-import { User } from '../../domain/user/user';
+import { UserMemoryRespository } from '../../../infra/db/in-memory/user-memory.repository';
+import { GetUser } from '../get-user';
+import { User } from '../../../domain/user/user';
 
 describe('get one user', () => {
   test('execution', async () => {
