@@ -31,6 +31,6 @@ describe('List user companies', () => {
 
     const userCompanies = await listUserCompanies.execute(userId);
 
-    expect(userCompanies).toStrictEqual([company]);
+    expect(userCompanies).toStrictEqual([[company], 1]);
   });
 });

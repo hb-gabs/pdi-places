@@ -12,9 +12,15 @@ export class PlaceTypeOrmRepository implements PlaceRepository {
 
   async findAllByCompanyId(
     companyId: string,
-    options: IQueryOptions,
-  ): Promise<Place[]> {
-    return await this.ormRepo.findBy({ company_id: companyId });
+    options?: IQueryOptions,
+  ): Promise<[Place[], number]> {
+    return await this.ormRepo.findAndCount({
+      where: {
+        company_id: companyId,
+      },
+      skip: options?.page * options?.pageSize,
+      take: options?.pageSize,
+    });
   }
 
   async save(input: Place): Promise<void> {

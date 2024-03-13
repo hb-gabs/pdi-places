@@ -1,4 +1,12 @@
-import { Controller, Post, Body, Patch, Param, Get } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Get,
+  Query,
+} from '@nestjs/common';
 import { CompaniesService } from './companies.service';
 import { CreateCompanyDto } from './dto/create-company.dto';
 import { ChangeCompanyResponsibleDto } from './dto/change-company-responsible.dto';
@@ -24,7 +32,7 @@ export class CompaniesController {
   }
 
   @Get('/user/:userid')
-  listCompaniesByOwner(@Param('userid') userId: string) {
-    return this.companiesService.listCompaniesByOwner(userId);
+  listCompaniesByOwner(@Param('userid') userId: string, @Query() query: any) {
+    return this.companiesService.listCompaniesByOwner(userId, query);
   }
 }

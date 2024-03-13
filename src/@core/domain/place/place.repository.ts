@@ -6,7 +6,7 @@ export interface PlaceRepository {
   findById(placeId: string): Promise<Place>;
   findAllByCompanyId(
     companyId: string,
-    options: IQueryOptions,
-  ): Promise<Place[]>;
+    options?: IQueryOptions,
+  ): Promise<[Place[], number]>;
   deletePlace(placeId: string): Promise<void>;
 }

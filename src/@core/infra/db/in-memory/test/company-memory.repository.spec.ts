@@ -28,8 +28,8 @@ describe('Company Memory Repository', () => {
   });
 
   test('get all companies', async () => {
-    const companies = await companyRepo.findAllByOwnerId(ownerId);
+    const companies = await companyRepo.findAllByOwnerId(ownerId, {});
 
-    expect(companyRepo.companies).toStrictEqual(companies);
+    expect(companyRepo.companies).toStrictEqual(companies[0]);
   });
 });

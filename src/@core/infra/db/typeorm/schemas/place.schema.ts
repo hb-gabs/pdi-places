@@ -1,6 +1,5 @@
 import { Place } from '../../../../domain/place/place';
 import { EntitySchema } from 'typeorm';
-import { CompanySchema } from './company.schema';
 
 export const PlaceSchema = new EntitySchema<Place>({
   name: 'place',

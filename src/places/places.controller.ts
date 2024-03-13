@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  Query,
+} from '@nestjs/common';
 import { PlacesService } from './places.service';
 import { CreatePlaceDto } from './dto/create-place.dto';
 
@@ -12,8 +20,8 @@ export class PlacesController {
   }
 
   @Get('/company/:companyId')
-  findAll(@Param('companyId') companyId: string) {
-    return this.placesService.findAll(companyId);
+  findAll(@Param('companyId') companyId: string, @Query() query: any) {
+    return this.placesService.findAll(companyId, query);
   }
 
   @Get(':id')

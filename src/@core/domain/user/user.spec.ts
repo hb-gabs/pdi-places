@@ -1,4 +1,3 @@
-import { Company } from '../company/company';
 import { User } from './user';
 
 describe('Test User entity', () => {

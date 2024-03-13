@@ -2,6 +2,7 @@ import { CompanyRepository } from '../../../@core/domain/company/company.reposit
 import { UserRepository } from '../../../@core/domain/user/user.repository';
 import { Exception } from '../utils/app-exception';
 import { Company } from '../../../@core/domain/company/company';
+import { IQueryOptions } from '../utils/interfaces';
 
 export class ListUserCompanies {
   constructor(
@@ -9,13 +10,16 @@ export class ListUserCompanies {
     private userRepo: UserRepository,
   ) {}
 
-  async execute(userId: string): Promise<Company[]> {
+  async execute(
+    userId: string,
+    options?: IQueryOptions,
+  ): Promise<[Company[], number]> {
     const user = await this.userRepo.findById(userId);
 
     if (!user) {
       throw new Exception('User not found!', 400);
     }
 
-    return await this.companyRepo.findAllByOwnerId(userId);
+    return await this.companyRepo.findAllByOwnerId(userId, options);
   }
 }

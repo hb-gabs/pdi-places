@@ -1,5 +1,4 @@
 import { Company } from '../../../domain/company/company';
-import { User } from '../../../domain/user/user';
 import { CompanyMemoryRepository } from '../../../infra/db/in-memory/company-memory.repository';
 import { PlaceMemoryRepository } from '../../../infra/db/in-memory/place-memory.repository';
 import { CreatePlace } from '../create-place';

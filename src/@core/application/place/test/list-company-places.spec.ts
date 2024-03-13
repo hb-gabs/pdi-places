@@ -1,7 +1,6 @@
 import { PlaceMemoryRepository } from '../../../infra/db/in-memory/place-memory.repository';
 import { ListCompanyPlaces } from '../list-company-places';
 import { Place } from '../../../domain/place/place';
-import { Company } from '../../../domain/company/company';
 
 describe('list company places', () => {
   const companyId = '123';
@@ -25,12 +24,12 @@ describe('list company places', () => {
     await placeRepo.save(place);
     const places = await listCompanyPlaces.execute(companyId);
 
-    expect(places).toStrictEqual([place]);
+    expect(places).toStrictEqual([[place], 1]);
   });
 
   test('execution with wrong id', async () => {
     const places = await listCompanyPlaces.execute('wrong id');
 
-    expect(places).toStrictEqual([]);
+    expect(places).toStrictEqual([[], 0]);
   });
 });

@@ -19,6 +19,6 @@ describe('List users', () => {
 
     const users = await listUsers.execute();
 
-    expect(users).toStrictEqual([user]);
+    expect(users).toStrictEqual([[user], 1]);
   });
 });

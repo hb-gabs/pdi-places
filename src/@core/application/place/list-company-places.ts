@@ -5,7 +5,10 @@ import { IQueryOptions } from '../utils/interfaces';
 export class ListCompanyPlaces {
   constructor(readonly placeRepo: PlaceRepository) {}
 
-  async execute(companyId: string, options?: IQueryOptions): Promise<Place[]> {
+  async execute(
+    companyId: string,
+    options?: IQueryOptions,
+  ): Promise<[Place[], number]> {
     return this.placeRepo.findAllByCompanyId(companyId, options);
   }
 }

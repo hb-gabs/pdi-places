@@ -1,5 +1,4 @@
 import { Company } from '../company/company';
-import { User } from '../user/user';
 import { Place } from './place';
 
 describe('Place Entity', () => {

@@ -43,9 +43,9 @@ export class CompaniesService {
     }
   }
 
-  async listCompaniesByOwner(userId: string) {
+  async listCompaniesByOwner(userId: string, query: any) {
     try {
-      return await this.listUserCompanies.execute(userId);
+      return await this.listUserCompanies.execute(userId, query);
     } catch (error) {
       throw new HttpException(error.message, error.statusCode);
     }

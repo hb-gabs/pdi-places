@@ -1,4 +1,3 @@
-import { Company } from '../../../../domain/company/company';
 import { Place } from '../../../../domain/place/place';
 import { PlaceMemoryRepository } from '../place-memory.repository';
 
@@ -41,13 +40,13 @@ describe('Place Memory Repository', () => {
 
     const places = await placeRepo.findAllByCompanyId(otherCompanyId);
 
-    expect(places).toStrictEqual([otherPlace]);
+    expect(places).toStrictEqual([[otherPlace], 1]);
     expect(placeRepo.places).toHaveLength(2);
   });
 
   test('get place by company id', async () => {
     const places = await placeRepo.findAllByCompanyId(companyId);
 
-    expect(places).toHaveLength(1);
+    expect(places[0]).toHaveLength(1);
   });
 });

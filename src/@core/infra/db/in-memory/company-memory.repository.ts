@@ -1,6 +1,7 @@
 import { CompanyRepository } from '../../../domain/company/company.repository';
 import { Company } from '../../../domain/company/company';
 import { Exception } from '../../../application/utils/app-exception';
+import { IQueryOptions } from 'src/@core/application/utils/interfaces';
 
 export class CompanyMemoryRepository implements CompanyRepository {
   companies: Company[] = [];
@@ -19,8 +20,12 @@ export class CompanyMemoryRepository implements CompanyRepository {
     return;
   }
 
-  async findAllByOwnerId(ownerId: string): Promise<Company[]> {
-    return this.companies.filter((c) => c.owner_id === ownerId);
+  async findAllByOwnerId(
+    ownerId: string,
+    options: IQueryOptions,
+  ): Promise<[Company[], number]> {
+    const foundCompanies = this.companies.filter((c) => c.owner_id === ownerId);
+    return [foundCompanies, foundCompanies.length];
   }
 
   async findById(id: string): Promise<Company> {

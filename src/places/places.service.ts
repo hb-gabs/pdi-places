@@ -25,9 +25,9 @@ export class PlacesService {
     }
   }
 
-  async findAll(companyId: string) {
+  async findAll(companyId: string, query: any) {
     try {
-      return await this.listCompanyPlaces.execute(companyId);
+      return await this.listCompanyPlaces.execute(companyId, query);
     } catch (error) {
       throw new HttpException(error.message, error.statusCode);
     }

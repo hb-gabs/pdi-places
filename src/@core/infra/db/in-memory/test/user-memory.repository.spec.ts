@@ -24,7 +24,7 @@ describe('User Memory Repository', () => {
     const users = await userRepo.findAll();
 
     expect(userRepo.users).toHaveLength(1);
-    expect(userRepo.users).toStrictEqual(users);
+    expect(userRepo.users).toStrictEqual(users[0]);
   });
 
   it('should return user by id', async () => {

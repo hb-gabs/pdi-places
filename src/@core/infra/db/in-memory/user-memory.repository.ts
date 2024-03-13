@@ -1,6 +1,7 @@
 import { UserRepository } from '../../../domain/user/user.repository';
 import { User } from '../../../domain/user/user';
 import { Exception } from '../../../application/utils/app-exception';
+import { IQueryOptions } from 'src/@core/application/utils/interfaces';
 
 export class UserMemoryRespository implements UserRepository {
   users: User[] = [];
@@ -19,8 +20,8 @@ export class UserMemoryRespository implements UserRepository {
     return;
   }
 
-  async findAll(): Promise<User[]> {
-    return this.users;
+  async findAll(options?: IQueryOptions): Promise<[User[], number]> {
+    return [this.users, this.users.length];
   }
 
   async findById(id: string): Promise<User> {

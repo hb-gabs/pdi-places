@@ -26,8 +26,8 @@ export class UsersService {
     }
   }
 
-  async findAll() {
-    return await this.listUsers.execute();
+  async findAll(query: any) {
+    return await this.listUsers.execute(query);
   }
 
   async findOne(id: string) {
