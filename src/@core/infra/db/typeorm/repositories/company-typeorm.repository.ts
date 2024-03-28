@@ -12,7 +12,7 @@ export class CompanyTypeOrmRepository implements CompanyRepository {
   ): Promise<[Company[], number]> {
     return await this.ormRepo.findAndCount({
       where: {
-        owner_id: ownerId,
+        owner: { id: ownerId },
       },
       skip: options?.page * options?.pageSize,
       take: options?.pageSize,

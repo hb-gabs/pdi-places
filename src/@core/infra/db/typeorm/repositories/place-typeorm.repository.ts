@@ -16,7 +16,7 @@ export class PlaceTypeOrmRepository implements PlaceRepository {
   ): Promise<[Place[], number]> {
     return await this.ormRepo.findAndCount({
       where: {
-        company_id: companyId,
+        company: { id: companyId },
       },
       skip: options?.page * options?.pageSize,
       take: options?.pageSize,

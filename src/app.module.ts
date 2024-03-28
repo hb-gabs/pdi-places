@@ -6,6 +6,7 @@ import { typeOrmConfig } from './config/typeorm.config';
 import { PlacesModule } from './places/places.module';
 import { UsersModule } from './users/users.module';
 import { CompanysModule } from './companies/companies.module';
+import { SessionsModule } from './sessions/sessions.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { CompanysModule } from './companies/companies.module';
     UsersModule,
     PlacesModule,
     CompanysModule,
+    SessionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
