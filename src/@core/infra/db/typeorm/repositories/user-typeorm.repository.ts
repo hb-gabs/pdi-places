@@ -22,4 +22,8 @@ export class UserTypeOrmRepository implements UserRepository {
   async save(input: User): Promise<void> {
     await this.ormRepo.save(input);
   }
+
+  async findByEmail(email: string): Promise<User> {
+    return await this.ormRepo.findOneBy({ email });
+  }
 }
