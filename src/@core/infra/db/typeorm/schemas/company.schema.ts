@@ -1,9 +1,10 @@
 import { Company } from '../../../../domain/company/company';
 import { EntitySchema } from 'typeorm';
 import { UserSchema } from './user.schema';
+import { User } from '../../../../../@core/domain/user/user';
 
 export const CompanySchema = new EntitySchema<Company>({
-  name: 'company',
+  name: 'Company',
   target: Company,
   columns: {
     id: {
@@ -24,15 +25,14 @@ export const CompanySchema = new EntitySchema<Company>({
       length: 128,
       nullable: true,
     },
-    owner_id: {
-      type: 'uuid',
-      nullable: false,
+  },
+  relations: {
+    owner: {
+      type: 'many-to-one',
+      target: UserSchema,
+      joinColumn: {
+        name: 'owner_id',
+      },
     },
   },
-  // relations: {
-  //   owner_id: {
-  //     target: UserSchema,
-  //     type: 'many-to-one',
-  //   },
-  // },
 });

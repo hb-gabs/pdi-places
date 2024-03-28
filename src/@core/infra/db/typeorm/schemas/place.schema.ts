@@ -1,8 +1,9 @@
 import { Place } from '../../../../domain/place/place';
 import { EntitySchema } from 'typeorm';
+import { CompanySchema } from './company.schema';
 
 export const PlaceSchema = new EntitySchema<Place>({
-  name: 'place',
+  name: 'Place',
   target: Place,
   columns: {
     id: {
@@ -42,15 +43,14 @@ export const PlaceSchema = new EntitySchema<Place>({
       length: 64,
       nullable: false,
     },
-    company_id: {
-      type: 'uuid',
-      nullable: false,
+  },
+  relations: {
+    company: {
+      target: CompanySchema,
+      type: 'many-to-one',
+      joinColumn: {
+        name: 'company_id',
+      },
     },
   },
-  // relations: {
-  //   company: {
-  //     target: CompanySchema,
-  //     type: 'many-to-one',
-  //   },
-  // },
 });

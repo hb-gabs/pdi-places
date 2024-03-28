@@ -1,8 +1,10 @@
 import { User } from '../../../../domain/user/user';
-import { EntitySchema } from 'typeorm';
+import { Entity, EntitySchema, EntityTarget } from 'typeorm';
+import { CompanySchema } from './company.schema';
+import { Company } from '../../../../../@core/domain/company/company';
 
 export const UserSchema = new EntitySchema<User>({
-  name: 'user',
+  name: 'User',
   target: User,
   columns: {
     id: {

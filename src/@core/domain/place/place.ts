@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import { Company } from '../company/company';
 
 interface IPlace {
   name: string;
@@ -8,7 +9,7 @@ interface IPlace {
   neighborhood: string;
   city: string;
   state: string;
-  company_id: string;
+  company: Company,
 }
 
 export class Place {
@@ -75,12 +76,12 @@ export class Place {
     this.props.state = value;
   }
 
-  get company_id() {
-    return this.props.company_id;
+  get company() {
+    return this.props.company;
   }
 
-  set company_id(value: string) {
-    this.props.company_id = value;
+  set company(value: Company) {
+    this.props.company = value;
   }
 
   toJSON() {

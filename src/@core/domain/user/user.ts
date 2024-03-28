@@ -1,10 +1,12 @@
 import crypto from 'crypto';
 import { Exception } from '../../../@core/application/utils/app-exception';
+import { Company } from '../company/company';
 
 interface IUser {
   name: string;
   email: string;
   password: string;
+  company: Company;
 }
 
 export class User {
@@ -46,6 +48,14 @@ export class User {
 
   set password(value: string) {
     this.props.password = value;
+  }
+
+  get company() {
+    return this.props.company;
+  }
+
+  set company(value: Company) {
+    this.props.company = value;
   }
 
   toJSON() {

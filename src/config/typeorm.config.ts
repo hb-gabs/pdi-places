@@ -7,9 +7,13 @@ export const typeOrmConfig: TypeOrmModule = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
-  database: 'places',
+  database: 'places2',
   username: 'postgres',
   password: 'postgres',
-  entities: [UserSchema, PlaceSchema, CompanySchema],
+  entities: [
+    UserSchema,
+    PlaceSchema,
+    CompanySchema
+  ],
   logging: false,
 };

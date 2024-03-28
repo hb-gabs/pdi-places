@@ -1,10 +1,11 @@
 import crypto from 'crypto';
+import { User } from '../user/user';
 
 interface ICompany {
   name: string;
   website: string;
   cnpj: number;
-  owner_id: string;
+  owner: User,
 }
 
 export class Company {
@@ -40,12 +41,12 @@ export class Company {
     this.props.cnpj = value;
   }
 
-  get owner_id() {
-    return this.props.owner_id;
+  get owner() {
+    return this.props.owner;
   }
 
-  set owner_id(value: string) {
-    this.props.owner_id = value;
+  set owner(value: User) {
+    this.props.owner = value;
   }
 
   toJSON() {
