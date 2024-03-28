@@ -10,7 +10,6 @@ describe('Get place by id', () => {
     const place = new Place({
       cep: 123123,
       city: 'Fortaelza',
-      company_id: '123',
       name: 'Lugar teste',
       neighborhood: 'Vizinhança',
       number: 123,

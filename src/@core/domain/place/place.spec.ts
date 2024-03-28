@@ -7,7 +7,6 @@ describe('Place Entity', () => {
       name: 'Empresa',
       cnpj: 23849238492,
       website: 'Empresa.com',
-      owner_id: 'any',
     },
     '123',
   );
@@ -21,7 +20,7 @@ describe('Place Entity', () => {
     number: 345,
     state: 'CE',
     street: 'RUa tal',
-    company_id: company.id,
+    company: { id: company.id } as Company,
   };
 
   const place = new Place(placeProps, placeId);
@@ -29,7 +28,7 @@ describe('Place Entity', () => {
   test('declaration', () => {
     expect(place.id).toBe(placeId);
     expect(place.name).toBe('Name');
-    expect(place.company_id).toBe(company.id);
+    expect(place.company.id).toBe(company.id);
   });
 
   test('json', () => {

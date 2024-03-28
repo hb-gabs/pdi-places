@@ -15,7 +15,7 @@ describe('Company test', () => {
     name: 'Empresa',
     cnpj: 23849238492,
     website: 'Empresa.com',
-    owner_id: user.id,
+    owner: { id: user.id } as User,
   };
 
   const companyId = '123';
@@ -25,7 +25,7 @@ describe('Company test', () => {
   test('Declaration', () => {
     expect(company.id).toBe('123');
     expect(company.name).toBe('Empresa');
-    expect(company.owner_id).toStrictEqual(user.id);
+    expect(company.owner.id).toStrictEqual(user.id);
   });
 
   test('to json', () => {

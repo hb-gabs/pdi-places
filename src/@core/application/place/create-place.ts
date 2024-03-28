@@ -1,3 +1,4 @@
+import { Company } from '../../../@core/domain/company/company';
 import { CompanyRepository } from '../../domain/company/company.repository';
 import { Place } from '../../domain/place/place';
 import { PlaceRepository } from '../../domain/place/place.repository';
@@ -28,7 +29,7 @@ export class CreatePlace {
       city: input.city,
       neighborhood: input.neighborhood,
       state: input.state,
-      company_id: company.id,
+      company: { id: company.id } as Company,
     });
     await this.placeRepo.save(place);
     return;

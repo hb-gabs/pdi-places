@@ -23,7 +23,7 @@ describe('Change Compan Responsible', () => {
       name: 'nm',
       cnpj: 5432423,
       website: 'site.com',
-      owner_id: oldResponsible.id,
+      owner: { id: oldResponsible.id } as User,
     },
     '123',
   );
@@ -44,7 +44,7 @@ describe('Change Compan Responsible', () => {
 
     const companyNewResponsible = await companyRepo.findById('123');
 
-    expect(companyNewResponsible.owner_id).toBe(newResponsible.id);
+    expect(companyNewResponsible.owner.id).toBe(newResponsible.id);
   });
 
   it('should throw company not found', async () => {

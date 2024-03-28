@@ -24,7 +24,7 @@ export class CompanyMemoryRepository implements CompanyRepository {
     ownerId: string,
     options: IQueryOptions,
   ): Promise<[Company[], number]> {
-    const foundCompanies = this.companies.filter((c) => c.owner_id === ownerId);
+    const foundCompanies = this.companies.filter((c) => c.owner.id === ownerId);
     return [foundCompanies, foundCompanies.length];
   }
 

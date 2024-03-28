@@ -26,7 +26,7 @@ describe('Create Company', () => {
     );
 
     expect(companyRepo.companies).toHaveLength(1);
-    expect(companyRepo.companies[0].owner_id).toBe(owner.id);
+    expect(companyRepo.companies[0].owner.id).toBe(owner.id);
   });
 
   it('should throw user not found', async () => {

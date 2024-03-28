@@ -1,3 +1,4 @@
+import { User } from '../../../@core/domain/user/user';
 import { Company } from '../../domain/company/company';
 import { CompanyRepository } from '../../domain/company/company.repository';
 import { UserRepository } from '../../domain/user/user.repository';
@@ -20,7 +21,7 @@ export class CreateCompany {
       name: input.name,
       cnpj: input.cnpj,
       website: input.website,
-      owner_id: owner.id,
+      owner: { id: owner.id } as User,
     });
     await this.companyRepo.save(company);
     return;

@@ -5,7 +5,7 @@ interface ICompany {
   name: string;
   website: string;
   cnpj: number;
-  owner: User,
+  owner?: User,
 }
 
 export class Company {

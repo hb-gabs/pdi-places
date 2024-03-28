@@ -1,6 +1,7 @@
 import { PlaceMemoryRepository } from '../../../infra/db/in-memory/place-memory.repository';
 import { ListCompanyPlaces } from '../list-company-places';
 import { Place } from '../../../domain/place/place';
+import { Company } from '../../../../@core/domain/company/company';
 
 describe('list company places', () => {
   const companyId = '123';
@@ -13,7 +14,7 @@ describe('list company places', () => {
     number: 345,
     state: 'CE',
     street: 'RUa tal',
-    company_id: companyId,
+    company: { id: companyId } as Company,
   });
 
   const placeRepo = new PlaceMemoryRepository();

@@ -1,3 +1,4 @@
+import { Company } from 'src/@core/domain/company/company';
 import { Place } from '../../../../domain/place/place';
 import { PlaceMemoryRepository } from '../place-memory.repository';
 
@@ -13,7 +14,7 @@ describe('Place Memory Repository', () => {
     number: 345,
     state: 'CE',
     street: 'RUa tal',
-    company_id: companyId,
+    company: { id: companyId } as Company,
   });
 
   test('insert place', async () => {
@@ -33,7 +34,7 @@ describe('Place Memory Repository', () => {
       number: 345,
       state: 'CE',
       street: 'RUa tal',
-      company_id: otherCompanyId,
+      company: { id: otherCompanyId } as Company,
     });
 
     await placeRepo.save(otherPlace);

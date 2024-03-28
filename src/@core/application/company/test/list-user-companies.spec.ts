@@ -24,7 +24,7 @@ describe('List user companies', () => {
       cnpj: 123456,
       name: 'Company 01',
       website: 'company.com',
-      owner_id: userId,
+      owner: { id: userId } as User,
     });
 
     companyRepo.save(company);

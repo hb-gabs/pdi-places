@@ -10,7 +10,6 @@ describe('Delete Place', () => {
       name: 'Name',
       cep: 12301293,
       city: 'Fokasod',
-      company_id: 'q9e123',
       neighborhood: '2093012',
       number: 123,
       state: 'asoidj',

@@ -16,7 +16,7 @@ describe('Company Memory Repository', () => {
       name: 'company',
       cnpj: 34654632,
       website: 'site.com.br',
-      owner_id: user.id,
+      owner: { id: user.id } as User,
     });
 
     ownerId = user.id;

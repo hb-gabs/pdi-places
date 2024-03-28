@@ -1,3 +1,4 @@
+import { User } from '../../../@core/domain/user/user';
 import { CompanyRepository } from '../../domain/company/company.repository';
 import { UserRepository } from '../../domain/user/user.repository';
 
@@ -11,7 +12,7 @@ export class ChangeCompanyResponsible {
     const company = await this.companyRepo.findById(companyId);
     const user = await this.userRepo.findById(userId);
 
-    company.props.owner_id = user.id;
+    company.props.owner = { id: user.id } as User;
 
     await this.companyRepo.save(company);
 

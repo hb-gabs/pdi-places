@@ -9,7 +9,7 @@ interface IPlace {
   neighborhood: string;
   city: string;
   state: string;
-  company: Company,
+  company?: Company,
 }
 
 export class Place {

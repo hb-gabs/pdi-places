@@ -19,7 +19,7 @@ export class PlaceMemoryRepository implements PlaceRepository {
     options?: IQueryOptions,
   ): Promise<[Place[], number]> {
     const foundPlaces = this.places.filter(
-      (place) => place.props.company_id === companyId,
+      (place) => place.props.company.id === companyId,
     );
     return [foundPlaces, foundPlaces.length];
   }

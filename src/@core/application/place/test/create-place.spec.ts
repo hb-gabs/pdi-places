@@ -14,7 +14,6 @@ describe('Create Place', () => {
         name: 'Empresa',
         cnpj: 23849238492,
         website: 'Empresa.com',
-        owner_id: 'any',
       },
       '123',
     );
