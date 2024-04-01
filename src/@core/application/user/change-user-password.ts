@@ -12,12 +12,17 @@ export class ChangeUserPassword {
   ): Promise<void> {
     const user = await this.userRepo.findById(userId);
 
-    if (checkPassword(oldPassword, user.password)) {
-      user.password = newPassword;
-      await this.userRepo.save(user);
-      return;
+    if (!user) {
+      throw new Exception('User not found', 401);
     }
 
-    throw new Exception('Password is wrong!', 401);
+    if (!checkPassword(oldPassword, user.password)) {
+      throw new Exception('Password is wrong!', 401);
+      return;
+    }
+    
+    user.password = newPassword;
+ 
+    await this.userRepo.save(user);
   }
 }

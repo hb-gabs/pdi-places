@@ -9,6 +9,9 @@ export class UpdateUserProfile {
 
   async execute(id: string, input: TUpdateUser): Promise<void> {
     const user = await this.userRepo.findById(id);
+
     user.updateName(input.name);
+    
+    await this.userRepo.save(user);
   }
 }

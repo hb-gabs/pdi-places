@@ -29,7 +29,7 @@ export class CreatePlace {
       city: input.city,
       neighborhood: input.neighborhood,
       state: input.state,
-      company: { id: company.id } as Company,
+      company,
     });
     await this.placeRepo.save(place);
     return;

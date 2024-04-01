@@ -12,7 +12,7 @@ export class ChangeCompanyResponsible {
     const company = await this.companyRepo.findById(companyId);
     const user = await this.userRepo.findById(userId);
 
-    company.props.owner = { id: user.id } as User;
+    company.props.owner = user;
 
     await this.companyRepo.save(company);
 
